@@ -10,7 +10,8 @@ console.log(_publicDirectory)
 
 
 const app = express();
-const port = 3001;
+//only on heroku process.env.PORT, locally it will fail
+const port = process.env.PORT || 3001;
 
 app.set('views',_viewDirectory)
 app.set('view engine','hbs')
